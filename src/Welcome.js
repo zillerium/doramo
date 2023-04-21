@@ -1,33 +1,20 @@
-import React, {useState, useContext} from 'react';
-import {useQuery, useMutation} from 'react-query';
-import {Link, Routes, Route, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import DoramoSlider from './DoramoSlider.js';
+const Welcome = () => {
 
-import {CartContext} from './CartContext';
-import {Container, Table, Card, Button, Form, Row, Col} from 'react-bootstrap';
-import {AssetShowPage} from './pages/AssetShowPage';
-import {ArrowRight,Search} from 'react-bootstrap-icons';
-
-// import {productsArray} from '../productsStore';
-//import ProductCard from '../components/ProductCard';
-  //                    {productsArray.map((product, idx) => (
-    //                       <ProductCard product={product} />
-
-const Welcome =  () => {
-
-//	let res = await searchDB(props.query);
-  //      console.log(res.data);
-	return  (
-		 <Container className="mt-5">
-<Row>
-<Col>
+  return (
+    <Container className="mt-5">
+      <Row>
+        <Col>
           <h1 className="text-center">Welcome to Doramo</h1>
           <p className="lead text-center">
-            Use this website to add assets to the blockchain.
+            Tokenization of Assets
           </p>
-		 <div className="d-flex justify-content-center mt-5">
-            <img src="/houses.jpg" alt="houses" className="img-fluid rounded"/>
-          </div>
+	  <DoramoSlider />
           <div className="d-flex justify-content-center mt-5">
             <ul className="list-group">
               <li className="list-group-item">Add Asset</li>
@@ -38,13 +25,9 @@ const Welcome =  () => {
             </ul>
           </div>
         </Col>
-</Row>
-
+      </Row>
     </Container>
-	)
-}
-
+  );
+};
 
 export default Welcome;
-
-
